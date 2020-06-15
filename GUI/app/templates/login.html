@@ -1,0 +1,159 @@
+<!doctype html>
+<!--[if IE 9]> <html class="no-js ie9 fixed-layout" lang="en"> <![endif]-->
+<!--[if gt IE 9]><!--> <html class="no-js " lang="en"> <!--<![endif]-->
+<head>
+
+    <!-- Basic -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    
+    <!-- Mobile Meta -->
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    
+    <!-- Site Meta -->
+   
+      <title>برنامج وصال المترجم</title>
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    
+    <!-- Site Icons -->
+    <link rel="shortcut icon"  href="{{ url_for('static',filename='img/images/logo2.png') }}" type="image/x-icon" />
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,500,700,900" rel="stylesheet"> 
+    <link href="https://fonts.googleapis.com/css?family=Droid+Serif:400,400i,700,700i" rel="stylesheet"> 
+    
+    <!-- Custom & Default Styles -->
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/bootstrap.min.css') }}" type="text/css">
+    <link rel="stylesheet" href= "{{ url_for('static',filename='css/font-awesome.min.css') }}"  type="text/css">
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/bootstrap-select.min.css') }}" type="text/css">
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/animate.css') }}" type="text/css">
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/style.css') }}" type="text/css">
+
+
+</head>
+<body >  
+
+    <!-- LOADER -->
+    <div id="preloader">
+        <img class="preloader" src="{{ url_for('static',filename='img/images/loader.gif') }}" alt="">
+    </div><!-- end loader -->
+    <!-- END LOADER -->
+
+    <div id="wrapper">
+        <!-- BEGIN # MODAL LOGIN -->
+       
+        <!-- END # MODAL LOGIN -->
+
+        <header  class="header header-normal">
+            <div class="topbar clearfix">
+                <div class="container">
+                    <div class="row-fluid">
+                        <div class="col-md-6 col-sm-6 text-left">
+                            <p>
+                                <strong><i class="fa fa-envelope"></i></strong> <a href="mailto:#">wesal-translator@outlook.com</a>
+                            </p>
+                        </div><!-- end left -->
+                        
+                    </div><!-- end row -->
+                </div><!-- end container -->
+            </div><!-- end topbar -->
+
+            <div class="container" >
+                <nav class="navbar navbar-default yamm">
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                            <span class="sr-only">Toggle navigation</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                        <div class="logo-normal">
+                           <a style="position: absolute;left: 0px;top:-1px;" class="navbar-brand" href="index.html"><img src="{{ url_for('static',filename='img/images/logo.png') }}" alt=""></a>
+
+                        </div>
+                    </div>
+
+                    <div id="navbar" class="navbar-collapse collapse">
+                        <ul class="nav navbar-nav navbar-right">
+                            <li><a href="login.html">تسجيل الدخول</a></li>
+                            <li ><a href="translation.html">ترجمة لغة الإشارة</a></li>
+                            <li><a href="index.html">الصفحة الرئيسية</a></li>
+
+                            
+                        </ul>
+                    </div>
+                </nav><!-- end navbar -->
+            </div><!-- end container -->
+        </header>
+        <section class="section lb p120" >
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="tagline-message page-title text-center">
+                         <h3 style="color: #01233F;">تسجيل الدخول</h3>
+                  
+                        </div>
+                    </div><!-- end col -->
+                </div><!-- end row -->
+            </div><!-- end container -->
+        </section><!-- end section -->
+        <section class="section gb nopadtop" >
+            <div class="container" >
+                     <div class="row blog-grid shop-grid">
+                  
+    <div class="login-container">
+<form action="/login.html" method= "POST" class="form-login">
+
+         <h1 align="center">مرحباً</h1>
+<h4><font color="red">{{errorM}}</font></h4>
+
+       <h1 align="center"><img align="center" src="{{ url_for('static',filename='img/images/admin.png') }}" width="60" height="60"></h1>
+      <label for="login-input-user" class="login__label" style="color: #01233F;text-align: right;">
+         البريد الإلكتروني
+      </label>
+      <input id="login-input-user" class="login__input" type="text"  name = "email" style="color: #01233F; text-align: right;" />
+      <label for="login-input-password" class="login__label" style="color: #01233F; text-align: right;">
+كلمة المرور
+        </label>
+      <input id="login-input-password" class="login__input" type="password"  name="password" style="color: #01233F; text-align: right;" />
+
+      <button style="position: absolute;top: 96%; color: white"class="login__submit" type="submit" name="submit">تسجيل الدخول</button>
+   </form></div>
+          
+                    </div>
+            </div><!-- end container -->
+        </section>
+
+    
+
+
+
+        <div class="copyrights">
+            <div class="container">
+                <div class="clearfix">
+                    <div class="pull-left">
+                        <div class="cop-logo">
+                            <a href="#"><img src="{{ url_for('static',filename='img/images/logo.png') }}" alt=""></a>
+                        </div>
+                    </div>
+
+                   
+                </div>
+            </div><!-- end container -->
+        </div><!-- end copy -->
+    </div><!-- end wrapper -->
+
+
+    <!-- jQuery Files -->
+    <script src="{{ url_for('static',filename='js/bootstrap-select.min.js') }}"></script>
+    <script src="{{ url_for('static',filename='js/jquery.min.js') }}"></script>
+    <script src="{{ url_for('static',filename='js/bootstrap.min.js') }}"></script>
+    <script src="{{ url_for('static',filename='js/carousel.js') }}"></script>
+    <script src="{{ url_for('static',filename='js/animate.js') }}"></script>
+    <script src="{{ url_for('static',filename='js/custom.js') }}"></script>
+	<script src="{{ url_for('static',filename='js/jquery/jquery-3.2.1.min.js') }}"></script>
+
+</body>
+</html>

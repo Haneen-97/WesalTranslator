@@ -1,0 +1,327 @@
+<!doctype html>
+<!--[if IE 9]> <html class="no-js ie9 fixed-layout" lang="en"> <![endif]-->
+<!--[if gt IE 9]><!--> <html class="no-js " lang="en"> <!--<![endif]-->
+<head>
+
+    <!-- Basic -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    
+    <!-- Mobile Meta -->
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+                <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <!-- Site Meta -->
+     <title>برنامج وصال المترجم</title>
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <!-- Site Icons -->
+    <link rel="shortcut icon" href="{{ url_for('static',filename='img/images/logo.png') }}" type="image/x-icon" />
+    <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,500,700,900" rel="stylesheet"> 
+    <link href="https://fonts.googleapis.com/css?family=Droid+Serif:400,400i,700,700i" rel="stylesheet"> 
+    
+    <!-- Custom & Default Styles -->
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/bootstrap.min.css') }}" type="text/css">
+    <link rel="stylesheet" href= "{{ url_for('static',filename='css/font-awesome.min.css') }}"  type="text/css">
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/bootstrap-select.min.css') }}" type="text/css">
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/animate.css') }}" type="text/css">
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/style.css') }}" type="text/css">
+        <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@1.0.0/dist/tf.min.js"></script>
+
+
+
+</head>
+<body>  
+<div class="modal fade" id="modelWindow" role="dialog"  aria-hidden="true">
+            <div class="modal-dialog modal-sm vertical-align-center" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <button  style="float:left;color:black" type="button" class="close" data-dismiss="modal">&times;</button>
+                  <h4  style="float:right" class="modal-title">وصال لترجمة لغة الإشارة</h4>
+                </div>
+                <div align="right" class="modal-body">
+                   هل كانت الترجمة صحيحة؟
+                </div>
+
+                <div  class="modal-footer">
+                    <form action="{{url_for('modalAnswer')}}" method="POST">
+                    <button style="float:left"  class="btn btn-danger" data-dismiss="modal" type="submit" name="correct" value="failure">غير صحيحة</button>
+                    <button style="float:left;"  data-dismiss="modal"  class="btn btn-success"  type="submit" name="correct" value="success">صحيحة</button>
+                </form>
+                </div>
+
+              </div>
+            </div>
+        </div>
+        <img class="preloader" src="{{ url_for('static',filename='img/images/loader.gif') }}" alt="">
+    </div><!-- end loader -->
+    <!-- END LOADER -->
+
+    <div id="wrapper">
+        <!-- BEGIN # MODAL LOGIN -->
+        
+        <!-- END # MODAL LOGIN -->
+
+        <header  class="header header-normal">
+            <div class="topbar clearfix">
+                <div class="container">
+                    <div class="row-fluid">
+                        <div class="col-md-6 col-sm-6 text-left">
+                            <p>
+                                <strong><i class="fa fa-envelope"></i></strong> <a href="mailto:#">wesal-translator@outlook.com</a>
+                            </p>
+                        </div><!-- end left -->
+                    </div><!-- end row -->
+                </div><!-- end container -->
+            </div><!-- end topbar -->
+
+            <div class="container" >
+                <nav class="navbar navbar-default yamm">
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                            <span class="sr-only">Toggle navigation</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                        <div class="logo-normal">
+                           <a style="position: absolute;left: 0px;top:-1px;" class="navbar-brand" href="index.html"><img src="{{ url_for('static',filename='img/images/logo.png') }}" alt=""></a>
+
+                        </div>
+                    </div>
+
+                    <div id="navbar" class="navbar-collapse collapse">
+                        <ul class="nav navbar-nav navbar-right">
+                            <li><a href="login.html">تسجيل الدخول</a></li>
+                            <li ><a href="translation.html">ترجمة لغة الإشارة</a></li>
+                            <li><a href="index.html">الصفحة الرئيسية</a></li>
+                        </ul>
+                    </div>
+                </nav><!-- end navbar -->
+            </div><!-- end container -->
+        </header>
+
+        <section class="section lb p120">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="tagline-message page-title text-center">
+                            <h3 style="color: #01233F;">ترجمة لغة الإشارة</h3>
+
+
+                        </div>
+                    </div><!-- end col -->
+                </div><!-- end row -->
+            </div><!-- end container -->
+        </section><!-- end section -->
+
+        <section class="section gb nopadtop" >
+            <div class="container" >
+                <div class="boxed boxedp4" style="background-color: #f0f0d6">
+
+                    <div class="row blog-grid shop-grid">
+                        <div class="div2"></div>
+                         <div style="position:relative; bottom:80px" class="home-text-wrapper relative container">
+
+                             <div  class="home-message">
+                                 <div id="image">
+
+                                 </div>
+                                 <br>
+
+                                 <div algin="center" class="file-upload">
+                                     <div align="center">
+                            <div align="center" class="file-select" style="width:300px">
+      <div align="center" style="text-align:center;" class="file-select-name" id="noFile">لم يتم اختيار أي صورة</div>
+
+    <div style="float:right" class="file-select-button" id="fileName" >اختر صورة</div>
+
+    <input type="file" multiple name="chooseFile" id="file" accept="image/*" onclick="myFunction()">
+  </div>
+</div>
+</div>
+                                <form  id="from" method="post" action="/sendAudio">
+                                 <!-- <div id="preview"></div> !-->
+                                       <textarea onclick="show()" readonly   placeholder="سوف تتم الترجمة هنا.."
+                                                   rows="10" name="preview" id="preview"
+                                                   cols="30" class="ui-autocomplete-input"
+                                                   autocomplete="off" role="textbox" style="text-align:right"
+                                                   aria-autocomplete="list" aria-haspopup="true"></textarea>
+
+                                             <button id="read"  style="padding:2px; width:100px; height:30px; position: relative;right: 70%;bottom: 40px;" onclick="return loadXMLDoc()" type="submit" name="submit_button" value="read" class="btn1 btn1-primary" disabled><i class="fa fa-volume-up" >
+                                                 &nbsp;تشغيل&nbsp;</i></button>
+                             </form>
+                                         <div class="text-center">
+                                             <button type="submit" name="submit_button" style="padding:2px; width:100px; height:30px;" value="predict1" class="btn1 btn1-primary" id="predict"><i class="fa fa-sign-language">&nbsp;&nbsp;ترجم&nbsp;&nbsp;</i></button>
+                                                <button type="submit"    class="btn1 btn1-primary" style="padding:2px; width:100px; height:30px;"  id="clear" onclick="reloadPage()">مسح</button>
+
+
+                                        </div>
+
+                                 <!-- </form> !-->
+
+</div>
+
+
+
+            </div>
+                    
+                    </div>
+                  
+                        </div>
+                    </div>
+
+
+        </section>
+
+
+        <div class="copyrights">
+            <div class="container">
+                <div class="clearfix">
+                    <div class="pull-left">
+                        <div class="cop-logo">
+                            <a href="#"><img src="{{ url_for('static',filename='img/images/logo.png') }}" alt=""></a>
+                        </div>
+                    </div>
+
+                   
+                </div>
+            </div><!-- end container -->
+        </div><!-- end copy -->
+    </div><!-- end wrapper -->
+
+
+    <!-- jQuery Files -->
+    <script src="{{ url_for('static',filename='js/bootstrap-select.min.js') }}"></script>
+    <script src="{{ url_for('static',filename='js/jquery.min.js') }}"></script>
+    <script src="{{ url_for('static',filename='js/bootstrap.min.js') }}"></script>
+    <script src="{{ url_for('static',filename='js/carousel.js') }}"></script>
+    <script src="{{ url_for('static',filename='js/animate.js') }}"></script>
+    <script src="{{ url_for('static',filename='js/custom.js') }}"></script>
+    <script src="{{ url_for('static',filename='js/bootstrap-select.min.js') }}"></script>
+    <script src="{{ url_for('static',filename='js/main1.js') }}"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
+
+
+
+
+ <script type="text/javascript">
+function reloadPage(){
+        location.reload(true);
+    }
+
+$("#preview").bind("DOMSubtreeModified", function() {
+var reWhiteSpace = new RegExp("/^\s+$/");
+var str=document.getElementById('preview');
+if(reWhiteSpace.test(str)){
+   document.getElementById("read").disabled = true;
+   }else{
+      document.getElementById("read").disabled = false;
+
+   }
+});
+
+
+//var loadFile = function(event) {
+//	var image = document.getElementById('output');
+//	image.src = URL.createObjectURL(event.target.files[0]);
+//};
+$('#file').bind('change', function () {
+  var filename = $("#file").val();
+  if (/^\s*$/.test(filename)) {
+    $(".file-upload").removeClass('active');
+    $("#noFile").text("No file chosen...");
+  }
+  else {
+    $(".file-upload").addClass('active');
+    $("#noFile").text(filename.replace("C:\\fakepath\\", ""));
+  }
+});
+ function loadXMLDoc()
+    {
+        var req = new XMLHttpRequest()
+        req.onreadystatechange = function()
+        {
+            if (req.readyState == 4)
+            {
+                if (req.status != 200)
+                {
+                    //error handling code here
+                }
+                else
+                {
+                    var response = JSON.parse(req.responseText)
+                }
+            }
+        }
+
+        req.open('POST', '/sendAudio')
+        req.setRequestHeader("Content-type", "application/x-www-form-urlencoded")
+        var un = document.getElementById('preview').value
+        var postVars = 'preview='+un
+        req.send(postVars)
+
+        return false
+    }
+    function previewImages() {
+
+  var $preview = $('#image').empty();
+  if (this.files) $.each(this.files, readAndPreview);
+
+  function readAndPreview(i, file) {
+
+    if (!/\.(jpe?g|png|gif)$/i.test(file.name)){
+      return alert(file.name +" is not an image");
+    } // else...
+
+    var reader = new FileReader();
+
+    $(reader).on("load", function() {
+      $preview.append($("<img/>", {src:this.result, height:100}));
+    });
+
+    reader.readAsDataURL(file);
+
+  }
+
+}
+
+$('#file').on("change", previewImages);
+function text(){
+document.getElementById("preview").innerHTML+=" ";
+document.getElementById("preview").placeholder = "سوف تتم الترجمة هنا.."
+
+}
+$('#file').on("change", text);
+
+function show(){
+$('#modelWindow').modal('show');
+}
+function myFunction() {
+Swal.fire({
+  title: '<strong><u>تنبيه</u></strong>',
+  icon: 'info',
+  html:
+    '<b>بإمكانك اختيار اكثر من صورة على ان تكون مرتبة ابجديا او مرقمة بالترتيب</b>',
+  showCloseButton: true,
+  showCancelButton: true,
+  focusConfirm: false,
+  confirmButtonText:
+    '<i class="fa fa-thumbs-up"></i>! حسناً',
+  confirmButtonAriaLabel: 'Thumbs up, great!',
+  showCancelButton: false,
+
+})
+}
+</script>
+</body>
+</html>
