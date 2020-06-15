@@ -5,12 +5,12 @@
 “Wesal” is an Arabic web-based application implemented using Python that will run on any device without restriction. The system will translate the sign language into plain text and spoken language to facilitate communications between people.
 
 ## Requirements 
-*TensorFlow version 2.1.0
-*Keras version 2.3.0
-*OpenCV-python version 4.2.0.34
-*Flask version 1.1.2
-*Gtts version 2.1.1 
-*Flask-Mysqldb version 0.2.0
+* TensorFlow version 2.1.0
+* Keras version 2.3.0
+* OpenCV-python version 4.2.0.34
+* Flask version 1.1.2
+* Gtts version 2.1.1 
+* Flask-Mysqldb version 0.2.0
 
 To start using “Wesal” Arabic Sign Language Translator:
 
