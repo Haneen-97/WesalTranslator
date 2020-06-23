@@ -20,4 +20,6 @@ To start using “Wesal” Arabic Sign Language Translator:
 4.	Select all images needed to be translate.
 5.	The uploaded image must be of an Arabic sign letter. 
 6.	The uploaded image has to have a clear hand outline (Very high or low brightness could affect the result). 
+
+
 All copyrights are reserved by “Wesal” Arabic Sign Language Translator 2020 ©.
