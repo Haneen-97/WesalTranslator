@@ -2,7 +2,7 @@
 
 ## “Wesal” Arabic Sign Language Translator
 
-“Wesal” is an Arabic web-based application implemented using Python that will run on any device without restriction. The system will translate the sign language into plain text and spoken language to facilitate communications between people.
+Wesal Translator is an Arabic web-based application implemented using Python. Uses AI techniques such as computer vision, deep learning, and NLP. The system comprises of two primary processes, image classification, and speech synthesizing.Computer vision is used to normalize images and convert them into grayscale. We described a deep learning approach for an image classification algorithm of Arabic sign language using CNN.The model achieved an accuracy of 99.61%, 100% for recall, F1 score, and precision. 
 
 ## Requirements 
 * TensorFlow version 2.1.0
