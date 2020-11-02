@@ -23,3 +23,7 @@ To start using “Wesal” Arabic Sign Language Translator:
 
 
 All copyrights are reserved by “Wesal” Arabic Sign Language Translator 2020 ©.
+
+
+
+![Picture1](https://user-images.githubusercontent.com/43758373/97839884-1bdd0680-1cf4-11eb-8665-53f5640d0cea.png)
